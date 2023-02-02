@@ -1,16 +1,74 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <title>geo455_ex2</title>
+       <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercise 2</title>
+        <style>
+             #container #header {
+                font-size: 1.5em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: .04em;
+                padding: 5px 5px;
+                background-color: rgba(170, 209, 187, 0.5);
+                border: 6px solid bisque;
+                border-radius: 10px;
+                text-align: center;
+                }
+            #container #leftsidebar {
+                position: static;
+                width: 200px;
+                top: 10px;
+                left: 50px;
+                padding: 10px 15px;
+                float: left;
+                height: 700px;
+                margin: 5px;
+                font-size: 1em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: .04em;
+                background-color: rgba(170, 209, 187, 0.5);
+                border: 4px solid bisque;
+                border-radius: 10px;
+            }
+             #container #menulist {
+                margin: 1px;
+                padding: 7px;
+            }
+
+            #container .menuitem {
+                background: rgba(225, 241, 231);
+                border: 2px solid rgb(11, 77, 40);
+                border-radius: 4px;
+                font-size: 1em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: .04em;
+                list-style-type: none;
+                margin: 4px;
+                padding: 2px;
+            }
+        </style>
+        
     </head>
     <body bgcolor="#EDDD9E">
-       <h1 align="center">Exercise 2</h1>
-             
-             <p> Here is the list of exercises we have completed in class</p>
+        <div id="container">
+            <div id = "header"><h3>Exercise 2</h3>
+              <p>Charlie Faude</p>
+                
+            </div>
+       
+             <div id= "leftsidebar">
+                <h3>Exercises</h3>
+                <ul id="menulist">
+                  <li class="menuitem"><a href="example-02-01.html">Example 02-01</a></li>
+                  <li class="menuitem"><a href="example-02-02.html">Example 02-02</a></li>
+                  <li class="menuitem"><a href="example-02-03.html">Example 02-03</a></li>
+                </ul>
+            <!-- <p> Here is the list of exercises we have completed in class</p>
              <ul>
                  <li><a href="example-02-01.html">Example 02-01</a></li>
                  <li><a href="example-02-02.html">Example 02-02</a></li>
-                 <li><a href="example-02-03.html">Example 02-03</a></li>
+                 <li><a href="example-02-03.html">Example 02-03</a></li>-->
 
         </ul>
      </body>
