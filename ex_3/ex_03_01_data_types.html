@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Assigning JavaScript (JS) Values</h2>
+
+    <p>In JavaScript, the = operator is used to assign values to variables.</p>
+
+    <p id="add"></p>
+    <p id="add1"></p>
+    <p id="sub"></p>
+    <p id="mult1"></p>
+    <p id="mult2"></p>
+    <p id="incree"></p>
+    <p id="decree"></p>
+    <p id="concata"></p>
+    <p id="list"></p>
+    <p id="bool"></p>
+
+    <script>
+        var x = 7;
+        var y = 4;
+        document.getElementById("add").innerHTML = x + x;
+        document.getElementById("sub").innerHTML = y - y;
+        document.getElementById("mult1").innerHTML = x * y;
+        document.getElementById("mult2").innerHTML = x * 10;
+        document.getElementById("add1").innerHTML = x + 12;
+        
+        var z = 11
+        z++;
+        document.getElementById("incree").innerHTML = z;
+        
+        z--;
+        document.getElementById("decree").innerHTML = z;
+
+        var s1 = "Charlie's";
+        var s2 = "Cats";
+        document.getElementById("concata").innerHTML = s1 +" "+ s2 +":";
+
+        var list = "<ol>";
+        list += "<li>Murki</li>";
+        list += "<li>Butter</li>";
+        list += "</ol>";
+        document.getElementById("list").innerHTML = list; // returns all values in the list
+
+        document.getElementById("bool").innerHTML = 4+6 >= 9;
+    </script>
+
+</body>
+</html>
