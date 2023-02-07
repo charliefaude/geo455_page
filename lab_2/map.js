@@ -16,5 +16,4 @@ L.marker([44.975382, -93.233786])
 
 L.marker([44.970687, -92.732228])
     .addTo(mymap)
-    .bindPopup("<b>Hello!</b><br><i>This is Hudson, WI.</i>")
-    <!--.openPopup()-->;
+    .bindPopup("<i>This is Hudson, WI.</i>");
