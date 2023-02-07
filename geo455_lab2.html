@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Lab 2 Charlie Faude</title>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: "bisque";
+                font-family: "Roboto Condensed", sans-serif;
+                color: ;
+            }
+            #title {
+                position: fixed;
+                margin-top: 0;
+                top: 10px;
+                left: 50px;
+                font-size: 2em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: .04em;
+                padding: 10px 15px;
+                background-color: rgba(170, 209, 187, 0.9);
+                border: 4px solid bisque;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #returnhome {
+                position: fixed;
+                margin-top: 0;
+                bottom: 20px;
+                right: 10px;
+                width: 80;
+                font-size: 0.9em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: 0em;
+                padding: 10px 15px;
+                background-color: rgba(170, 209, 187, 0.9);
+                border: 4px solid bisque;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #description h2 {
+                font-family: "Lora", serif;
+                letter-spacing: .04em;
+            }
+            #map {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+            }
+            #description {
+                position: fixed;
+                bottom: 20px;
+                left: 10px;
+                width: 280px;
+                padding: 0px 15px;
+                background-color: rgba(170, 209, 187, 0.9);
+                border: 4px solid bisque;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #description p {
+                font-size: .9em;
+                line-height: 1.5em;
+            }
+            #description a {
+                color: #005daa;
+                text-decoration: none;
+            }
+            #description a:hover {
+                text-decoration: underline;
+            }
+            
+        </style>
+    </head>
+    <body bgcolor="#0B4D28">
+        <h1 id="title">Lab 2</h1>
+        <p id="returnhome"><a href='../index.html' target="_blank">Return to Home Page</a></p>
+        <div id="map"></div>
+        <div id="description">
+            <h2>About Lab 2</h2>
+            <p>This is the final result of the <a href="https://leafletjs.com/examples/quick-start/" target="_blank">Leaflet Quick Start Guide</a>. The map demonstrates Leaflet basics, such as setting up a Leaflet map, adding markers, and popups.</p>
+            <p>The placement and styling of the title and description boxes is done using CSS. Check out the source code of this page to see how.</p>
+           <p>Map authored by Charlie Faude</p>
+        </div>
+        <script src="map.js"></script>
+        <!--h3 align="center"><a href='../index.html'>Return to Main Page</a></h3-->
+    </body>
+    
+</html>
