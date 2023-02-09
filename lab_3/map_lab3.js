@@ -1,4 +1,4 @@
-var mymap3 = L.map("map", {center: [44.13978580325002, -90.49646633748384], zoom: 7});
+var mymap3 = L.map("map", {center: [44.13978580325002, -90.49646633748384], zoom: 8});
 
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY2hhcmxpZWZhdWRlIiwiYSI6ImNsZG5sdzkxazBhc3EzcHB3ZWY1dms2cGUifQ.VHdv2AwIat4FNH8gGvEkGw', {
