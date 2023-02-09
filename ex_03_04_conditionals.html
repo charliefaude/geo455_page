@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#E9D9EE">
+
+    <h2>Monday Through Friday</h2>
+
+    <p id="happy day"></p>
+    <p id="good_night"></p>
+    <p id="good_all"></p>
+
+
+
+    <script>
+        
+        var hour= new Date().getHours() //returns the hour (0 to 23) of the current time.
+        var greeting ; 
+        
+        if (hour < 18) {
+            greeting = "Study hard!";
+        } else {
+            greeting = "Time to relax.";
+        }
+        document.getElementById("happy day").innerHTML = greeting;
+        
+        if (hour < 16) {// change the hour values based on the current time.
+            greeting = "Get it done!";
+        } else {
+            greeting = "Wrap it up!";
+        }
+        document.getElementById("good_night").innerHTML = greeting;
+        
+        if (hour < 12) {
+            greeting = "Good Morning!";
+        } else if (hour <17){
+            greeting = "Good Afternoon!";
+        } else {
+            greeting = "Good Evening!";
+        }
+        document.getElementById("good_all").innerHTML = greeting;
+        
+        
+
+    
+
+    </script>
+
+</body>
+</html>
