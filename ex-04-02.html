@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Earth Poles</title>
+    </head>
+    <style>
+            body {
+                margin: 1;
+                padding: 0;
+                background-color: "bisque";
+                font-family: "Roboto Condensed", sans-serif;
+                color: ;
+            }
+    </style> 
+    <body bgcolor="bisque">
+        <h2>Earth Poles Viewer</h2>
+        <img id="myImage" src="images/north.svg"><br>
+        <input type="button" value="North Pole" id="north" style="background-color:darkseagreen; bordercolor:black; color=white">
+        <input type="button" value="South Pole" id="south" style="background-color:skyblue; bordercolor:black; color=white">
+        <script>
+            function showNorth() {
+                document
+                    .getElementById("myImage")
+                    .src = "images/north.svg";
+            }
+            function showSouth() {
+                document
+                    .getElementById("myImage")
+                    .src = "images/south.svg";
+            }
+            
+            document
+                .getElementById("north")
+                .addEventListener("click", showNorth);
+            
+            document
+                .getElementById("south")
+                .addEventListener("click", showSouth);
+        </script>
+    </body>
+</html>
+
