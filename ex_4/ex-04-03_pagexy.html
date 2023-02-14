@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Event object</title>
+        <title>Event Object</title>
     </head>
-    <body>
+    <style>
+            body {
+                margin: 1;
+                padding: 0;
+                background-color: "bisque";
+                font-family: "Roboto Condensed", sans-serif;
+                color: ;
+            }
+    </style>
+    <body bgcolor="bisque">
         <p id="position"></p>
         <script>
             var page_coord = document.getElementById("position");
             document.addEventListener("mousemove", function(e) {
-                page_coord.innerHTML = e.pageX + " " + e.pageY;
+                page_coord.innerHTML = "Page Location X: " + e.pageX + " Y: " + e.pageY;
             });
         </script>
     </body>

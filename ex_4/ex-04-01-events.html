@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
-<body>
-
+    <head> <title>JavaScript Events</title> </head>
+ <style>
+            body {
+                margin: 1;
+                padding: 0;
+                background-color: "bisque";
+                font-family: "Roboto Condensed", sans-serif;
+                color: ;
+            }
+    </style>   
+<body bgcolor="bisque">
+    
 <h2>JavaScript HTML Events</h2>
     
     
     <h3>What can JavaScript do?</h3>
-    <button id="myBtn1">Click me!!</button>
+    <button id="myBtn1">I'll Tell You!</button>
     <p id="demo1"></p>
     
     
     
-    <h3>What's the date today?</h3>
-    <button id="myBtn2">Display current date/time</button>
+    <h3>What's the current date and time?</h3>
+    <button id="myBtn2">Want to Find Out?</button>
     <p id="demo2"></p>
     
-    <h3 onmouseover="style.color='red'" onmouseout="style.color='black'">
+    <h3 onmouseover="style.color='yellow'" onmouseout="style.color='blue'">
         Mouse over this text</h3>
 
     
     <h3>This example uses the addEventListener() 
-        method to add many events on the same button.</h3>
-    <button id="myBtn3">Try it!!</button>
+        method to add many events to the same button.</h3>
+    <button id="myBtn3">What's This?</button>
     <p id="demo3"></p>
 
 
 
 <script>
-    
     document.getElementById("myBtn1").addEventListener("click", hello);
     
     function hello() {
         document.getElementById("demo1").innerHTML = 
-            "JavaScript can change page contents!";
+            "JavaScript can change page contents, reatively expressing information!";
             }
 
     
@@ -51,15 +60,15 @@
     
     
     function myFunction(){
-        document.getElementById("demo3").innerHTML += "Moused over!<br>";
+        document.getElementById("demo3").innerHTML += "Stop Touching Me!<br>";
     }
     
     function mySecondFunction() {
-        document.getElementById("demo3").innerHTML += "Clicked!<br>";
+        document.getElementById("demo3").innerHTML += "POKE!<br>";
     }
     
     function myThirdFunction() {
-        document.getElementById("demo3").innerHTML += "Moused out!<br>";
+        document.getElementById("demo3").innerHTML += "I'm Not Touching You!<br>";
     }
     
     

@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Working with user input</title>
+        <title>Working with User Input</title>
     </head>
-    <body>
-        <p>First number: <input type="number" id="num1" min="0" max="100" value=""></p>
-        <p>Second number: <input type="number" id="num2" min="0" max="100" value=""></p>
+    <style>
+            body {
+                margin: 1;
+                padding: 0;
+                background-color: "bisque";
+                font-family: "Roboto Condensed", sans-serif;
+                color: ;
+            }
+    </style>
+    <body bgcolor="bisque">
+        <p>First Integer: <input type="number" id="num1" min="-10" max="100" value=""></p>
+        <p>Second Integer: <input type="number" id="num2" min="-10" max="100" value=""></p>
         
-        <input type="button" id="multiply" value="Multiply!">
+        <input type="button" id="multiply" value="Multiply!" style="background-color:mediumpurple; bordercolor:black; color=white">
         <p id="result"></p>
         
         <script>
@@ -16,7 +25,7 @@
             var result = document.getElementById("result");
             
             document.getElementById("multiply").addEventListener("click", function() {
-                result.innerHTML = "The result is: " + num1.value * num2.value;
+                result.innerHTML = "The product is: " + num1.value * num2.value;
             });
         </script>
     </body>
