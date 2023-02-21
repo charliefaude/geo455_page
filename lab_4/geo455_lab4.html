@@ -1,10 +1,136 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <title>geo455_lab4</title>
+       <title>Lab 4 Charlie Faude</title>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: "whitesmoke";
+                font-family: "Noto Sans", sans-serif;
+                color: black;
+            }
+            #title {
+                position: fixed;
+                margin-top: 0;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                text-align: center;
+                font-size: 2em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: .04em;
+                padding: 10px 15px;
+                background-color: rgba(227, 228, 236);
+                border: 4px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #map {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+            }
+            .custom .leaflet-popup-tip, 
+            .custom .leaflet-popup-content-wrapper {
+                background: #000000;
+                color: #ffffff;
+            }
+            #description h2 {
+                font-family: "Roboto Condensed", sans-serif;;
+                letter-spacing: .04em;
+            }
+            #map {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+            }
+            #footer {
+                position: fixed;
+                margin-top: 0;
+                bottom: 7px;
+                left: 10px;
+                
+                text-align: right;
+                font-size: 0.9em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: 0em;
+                padding: 10px 15px;
+                background-color: rgba(227, 228, 236);
+                border: 4px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            <!-- #footer2 {
+                position: fixed;
+                margin-top: 0;
+                bottom: 220px;
+                right: 10px;
+                width: 800;
+                font-size: 0.9em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: 0em;
+                padding: 10px 15px;
+                background-color: rgba(170, 209, 187);
+                border: 4px solid bisque;
+                border-radius: 3px;
+                z-index: 800;
+            } -->
+            
+            #description {
+                position: fixed;
+                bottom: 20px;
+                right: 10px;
+                width: 280px;
+                padding: 0px 15px;
+                background-color: rgba(227, 228, 236);
+                border: 4px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #description p {
+                font-size: .9em;
+                line-height: 1.5em;
+            }
+            #description a {
+                color: #005daa;
+                text-decoration: none;
+            }
+            #description a:hover {
+                text-decoration: underline;
+            }
+            #container #menulist {
+                margin: 1px;
+                padding: 7px;
+            }
+            #container .menuitem {
+                background: rgba(225, 241, 231);
+                border: 2px solid rgb(11, 77, 40);
+                border-radius: 4px;
+                font-size: 1em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: 0em;
+                list-style-type: none;
+                margin: 4px;
+                padding: 2px;
+            }
+        </style>
     </head>
-         <body bgcolor="#EDDD9E">
-       <h1 align="center">Lab 4</h1>
-       
-     </body>
+    <body>
+        <h1 id="title">Lab 4</h1>
+        <div id="map"></div>
+        <p id="footer"><a href='../index.html'>Return to Home Page</a></p>
+        <div id="description">
+            
+            <p>In this assignment, we are working with layer controls. We have three layers, landmarks, basemap, and SRTM 30m hillshade map using WMS service. Landmarks are based on encyclopedia Britannica's entry on  <a href="https://www.britannica.com/list/new-seven-wonders-of-the-world" target="_blank">New Seven Wonders of the World</a> and images are linked from Wikipedia Common Pages. </p>
+            <p>Map authored by <b>Charlie Faude</b>.</p>
+        </div>
+        <script src="map_lab4.js"></script>
+    </body>
 </html>
