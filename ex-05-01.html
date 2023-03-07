@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading GeoJSON from Object</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+
+let map = L.map("map").setView([43, -105], 4);
+
+L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attribution/">CartoDB</a>',
+    subdomains: "abcd",
+    maxZoom: 19
+}).addTo(map);
+
+let states = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"Name": "North Dakota"},
+      "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+              [[-104.05, 48.99], [-97.22,  48.98], 
+              [-96.58,  45.94], [-104.03, 45.94], 
+              [-104.05, 48.99]]
+          ]
+      }
+    }, 
+    {
+      "type": "Feature",
+      "properties": {"Name": "Colorado"},
+      "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+              [[-109.05, 41.00], [-102.06, 40.99], 
+              [-102.03, 36.99], [-109.04, 36.99], 
+              [-109.05, 41.00]]
+          ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {"Name": "Kansas"},
+      "geometry": { 
+          "type": "Polygon",
+        "coordinates": [
+          [[ -102.04908511600152,40.00769408349291],
+            [-102.0130936326648,36.981640499787034],
+            [
+              -94.60332792230312,
+              36.99901947348778
+            ],
+            [
+              -94.53368491292133,
+              39.110057095970774
+            ],
+            [
+              -94.92084299744042,
+              39.2542224621678
+            ],
+            [
+              -94.88853830310879,
+              39.424073776212424
+            ],
+            [
+              -95.07998085647276,
+              39.56191378878074
+            ],
+            [
+              -94.89571863587514,
+              39.803681430528485
+            ],
+            [
+              -94.93703236704917,
+              39.91100961219652
+            ],
+            [
+              -95.07210156896872,
+              39.84155303222025
+            ],
+            [
+              -95.33476809029986,
+              40.00810865558185
+            ],
+            [
+              -102.04908511600152,
+              40.00769408349291
+            ]
+          ]
+        ],
+        
+      }
+    }
+  ]
+}
+      }
+  ]
+};
+
+L.geoJSON(states).addTo(map);
+
+    </script>
+</body>
+</html>
+
