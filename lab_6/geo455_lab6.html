@@ -1,10 +1,78 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <title>geo455_lab6</title>
+       <title>Lab 6 Charlie Faude</title>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <script src="data.js"></script>
+        <script src="partial.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: "whitesmoke";
+                font-family: "Noto Sans", sans-serif;
+                color: black;
+            }
+            #title {
+                position: fixed;
+                margin-top: 0;
+                top: 10px;
+                left: 50px;
+                text-align: center;
+                font-size: 2em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: .04em;
+                padding: 10px 15px;
+                background-color: rgba(227, 228, 236);
+                border: 1px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
+            #map {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+            }
+            .legend {
+              padding: 6px 8px;
+              line-height: 18px;
+              background: rgba(255,255,255,0.9);
+              box-shadow: 0 0 15px rgba(0,0,0,0.2);
+              border-radius: 5px;
+            }
+           .legend i {
+              width: 18px;
+              height: 18px;
+              float: left;
+              margin-right: 8px;
+              opacity: 0.7;
+            }
+             #footer {
+                position: fixed;
+                margin-top: 0;
+                bottom: 7px;
+                left: 10px;
+                
+                text-align: right;
+                font-size: 0.9em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: 0em;
+                padding: 10px 15px;
+                background-color: rgba(227, 228, 236);
+                border: 0.7px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
+        </style>
     </head>
-         <body bgcolor="#EDDD9E">
-       <h1 align="center">Lab 6</h1>
-       
-     </body>
+    <body>
+        <h1 id="title">Lab 6</h1>
+        <div id="map"></div>
+        <p id="footer"><a href='../index.html'>Return to Home Page</a></p>
+        <script src="map_lab6.js"></script>
+    </body>
 </html>
