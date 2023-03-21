@@ -32,7 +32,7 @@ var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
 
 
 
-
+// MAP 1
 
 // assign colors and add script data for population density
 
@@ -95,7 +95,7 @@ geojson = L.geoJson(data, {
     onEachFeature: onEachFeature
 }).bindPopup(function (layer){
     return layer.feature.properties.pop_den
-        + '<p style="color:purple">' + layer.feature.properties.pop_den.toString() + 'People/Hectare </p>';
+        + '<p style="color:purple">' + layer.feature.properties.pop_den.toString() + ' People/Hectare </p>';
 }).addTo(mymap); 
 
 
@@ -104,15 +104,15 @@ geojson = L.geoJson(data, {
 
 // assign colors and add script data 
 
-function getColor1(value) {
-    return value > 5.360425  ? '#08519c':
-           value > 3.379878  ? '#3182bd':
-           value > 1.976896  ? '#6baed6':
-           value > 0.905532  ? '#bdd7e7':
+function getColor1(value1) {
+    return value1 > 5.36  ? '#08519c':
+           value1 > 3.38  ? '#3182bd':
+           value1 > 1.98  ? '#6baed6':
+           value1 > 0.91  ? '#bdd7e7':
                                '#eff3ff';
 }
 
-function style(feature){
+function style1(feature){
     return {
         fillColor: getColor1(feature.properties.partial),   
         weight: 2,
@@ -124,39 +124,39 @@ function style(feature){
 
 // 
 
-function highlightFeature(e1) {
-    var feature1 = e1.target;
+function highlightFeature1(e1) {
+    var feature = e1.target;
 
-    feature1.setStyle({
+    feature.setStyle({
         weight: 5,
         color: '#666',
         fillOpacity: 0.7
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        feature1.bringToFront();
+        feature.bringToFront();
     }
 }
 
-function onEachFeature(feature1, layer) {
+function onEachFeature1(feature, layer) {
     layer.on({
-        mouseover: highlightFeature, 
-        mouseout: resetHighlight,    
+        mouseover: highlightFeature1, 
+        mouseout: resetHighlight1,    
     });
 }
 
 var geojson1; 
             
-function resetHighlight(e1) {
+function resetHighlight1(e1) {
     geojson1.resetStyle(e1.target);
 }
 
 geojson1 = L.geoJson(partial, {
-    style:style,
-    onEachFeature: onEachFeature
+    style:style1,
+    onEachFeature: onEachFeature1
 }).bindPopup(function (layer){
-    return layer.feature1.properties.partial
-        + '<p style="color:purple">' + layer.feature1.properties.partial.toString() + 'English Speaking/Hectare </p>';
+    return layer.feature.properties.partial
+        + '<p style="color:purple">' + layer.feature.properties.partial.toString() + ' English Speaking/Hectare </p>';
 }).addTo(mymap); 
 
 
@@ -191,7 +191,7 @@ var legend1 = L.control({position: 'bottomleft'});
 legend1.onAdd = function (mymap) {
 
     var div1 = L.DomUtil.create('div', 'legend'),
-        grades = [0, 0.905532, 1.976896, 3.379878, 5.360425];
+        grades = [0, 0.91, 1.98, 3.38, 5.36];
 
     div1.innerHTML = '<b>Partially English Speaking Households <br></b>'; 
 
