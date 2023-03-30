@@ -23,18 +23,18 @@
                 font-family: "Noto Sans";
                 font: sans-serif;
             }
-            #title {
+             #title {
                 position: fixed;
                 margin-top: 0;
                 top: 10px;
                 left: 50px;
-                font-size: 1.5em;
-                font-family: "Lora", serif;
-                color: azure;
+                text-align: center;
+                font-size: 2em;
+                font-family: "Roboto Condensed", sans-serif;
                 letter-spacing: .04em;
                 padding: 10px 15px;
-                background-color: rgba(0, 128, 128, 0.8);
-                border: 1px solid grey;
+                background-color: rgba(227, 228, 236);
+                border: 1px solid black;
                 border-radius: 3px;
                 z-index: 800;
             }
@@ -49,13 +49,28 @@
                 font: sans-serif; 
                 font-size: 1.25em;
             }
-            
+            #footer {
+                position: fixed;
+                margin-top: 0;
+                bottom: 180px;
+                left: 10px;
+                text-align: right;
+                font-size: 0.9em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: 0em;
+                padding: 10px 15px;
+                background-color: rgba(227, 228, 236);
+                border: 0.7px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
            
         </style>
     </head>
     <body>
         <div id='title'>Lab 7: Mapping Expeditions and Fatalities in the Himalayas (1950-2003)</div>
         <div id='map'></div>
+        <p id="footer"><a href='../index.html'>Return to Home Page</a></p>
             <script src="map_lab7.js"></script>
     </body>
 </html>
