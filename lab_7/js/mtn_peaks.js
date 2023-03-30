@@ -1,4 +1,4 @@
-var mtn_peaks={
+var mtn_peaks = {
 "type": "FeatureCollection",
 "name": "mtn_peaks_himalayas",
 "coordinates": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
