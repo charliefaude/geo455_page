@@ -11,24 +11,29 @@
            }
            .styleclass {
                border: 5px solid cadetblue;
-               
            }
+           
       </style>
     </head>
       <script type = "text/javascript" 
          src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
       </script>
 
-      <script>
+     <script>
           $(document).ready(function() {
-              $("button").click(function(){
-                  $("img").toggleClass("styleclass");
-                  
-              });
-          });
-          
+              $("#button1").click(function(){
+                  $("img").addClass("styleclass");
+              }); //change to toggleClass
+                                  });
+    </script>
+        <script>
+          // Add removeClass()
+         $(document).ready(function() {
+              $("#removebutton").click(function(){
+                  $("img").removeClass("styleclass");
+                  }); });
 
-      </script>
+        </script>
 
 	
    <body>
@@ -41,6 +46,9 @@
            <img src="img/Thomson_&_Thompson.png">
        </div>
        
-       <button>Try addClass()</button>
+       <button id="button1">Try addClass()</button>
+       <!-- add button for remove class -->
+       <button id="removebutton">Try removeClass()</button>
+       
    </body>
 </html>

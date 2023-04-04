@@ -1,6 +1,6 @@
 <html>
    <head>
-      <title>Ex- 6-3: Effects</title>
+      <title>Ex- 6-3: Hide/Show</title>
        <style>
            .charac {
                float: left;
@@ -18,10 +18,18 @@
       <script>
           
        $(document).ready(function() {
-              $("img").click(function(){
-                  $(this).hide();
+              $("#hide").click(function(){
+                  $("img").hide();
               });
           });
+          </script>
+        <script>
+          $(document).ready(function() {
+              $("#show").click(function(){
+                  $("img").show();
+              });
+          });
+          
           // add function for show
 
       </script>
@@ -37,6 +45,8 @@
            <img src="img/Thomson_&_Thompson.png">
        </div>
        <!-- add show button -->
+       <button id="hide">Hide</button>
+       <button id="show">Show</button>
 
    </body>
 </html>
