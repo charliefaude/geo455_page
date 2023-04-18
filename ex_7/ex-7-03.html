@@ -26,7 +26,7 @@
     <script>
     
 // Bounds   long/lat
-var bounds = [-125.06804948750015, 48.423227753628424, -80.67187497957025, 25.34283898116232];
+var bounds = [46.0953463, 20.1750790, 13.1870289, 68.3020382];
     
 // Initialize map
 var mymap = L.map("map").fitBounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]]);
@@ -37,9 +37,19 @@ L.tileLayer(
 ).addTo(mymap);
 
 // Add draggable marker
-var marker = 
-    L.marker([48.42, -122.068], {draggable: true})
-    .bindPopup("This marker is draggable! Move it around...")
+var marker1 = 
+    L.marker([37.0048, 51.5037], {draggable: true})
+    .bindPopup("This marker is draggable! Move it around...(1)")
+    .addTo(mymap)
+    .openPopup();
+var marker2 = 
+    L.marker([41.2607, 37.4376], {draggable: true})
+    .bindPopup("This marker is draggable! Move it around...(2)")
+    .addTo(mymap)
+    .openPopup();
+var marker3 = 
+    L.marker([18.3942, 60.7369], {draggable: true})
+    .bindPopup("This marker is draggable! Move it around...(3)")
     .addTo(mymap)
     .openPopup();
     

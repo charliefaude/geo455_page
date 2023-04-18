@@ -26,7 +26,7 @@
     <script>
     
 // Bounds   long/lat  - feel free to change
-var bounds = [-91.24767126466358, 43.82383654812337, -91.20748926566223, 43.80826537588756];
+var bounds = [-93.2938335, 45.0134971, -93.1587835, 44.9327457];
     
 // Initialize map
 var mymap = L.map("map").fitBounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]]);
@@ -36,7 +36,17 @@ L.tileLayer(
     {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}
 ).addTo(mymap);
 
+// Find destination exactly 10 miles east        
+var umnsp = turf.point([-93.18503, 44.98503]);
+var distance = 10;
+var bearing = 90;
+var options = {units: 'miles'};
+
+var destination = turf.destination(umnsp, distance, bearing, options);
         
+        L.geoJSON(umnsp).addTo(mymap);
+        L.geoJSON(destination).addTo(mymap);
+
 
         
     </script>
