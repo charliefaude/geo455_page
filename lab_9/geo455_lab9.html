@@ -1,10 +1,99 @@
 <!DOCTYPE html>
-<html>
-    <head>
-       <title>geo455_lab9</title>
-    </head>
-         <body bgcolor="#EDDD9E">
-       <h1 align="center">Lab 9</h1>
-       
-     </body>
-</html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Migration Layer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://lycheelin.github.io/leaflet.migrationLayer/src/src.js"></script>
+    <script src="dane_data.js"></script>
+    <script src="dane_commute_counties.js"></script>
+    
+    <style>
+    html,body{
+        margin: 0;
+        padding: 0;
+    }
+        #title {
+                position: fixed;
+                margin-top: 0;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                text-align: center;
+                font-size: 2em;
+                font-family: "Roboto Condensed", sans-serif;
+                letter-spacing: .04em;
+                padding: 10px 15px;
+                background-color: #addd8e;
+                border: 4px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
+    #map{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    #footer {
+            position: fixed;
+            margin-top: 0;
+            bottom: 7px;
+            left: 335px;
+            right: 10px;
+            text-align: right;
+            font-size: 0.9em;
+            font-family: "Roboto Condensed", sans-serif;
+            letter-spacing: 0em;
+            padding: 10px 15px;
+            background-color: #addd8e;
+            border: 4px solid black;
+            border-radius: 3px;
+            z-index: 800;
+        }
+    #event{
+        position: fixed;
+        top: 80px;
+        bottom: 20px;
+        left: 10px;
+        width: 200px;
+        font-family: "Roboto Condensed", sans-serif;
+        padding: 0px 15px;
+        background-color: #addd8e;
+        border: 4px solid black;
+        border-radius: 3px;
+        z-index: 800;
+    }
+    .btn{
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+        border-color:black;
+        border-width: 2px;
+        background-color:white;
+   }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Lab 9: Workers Who Commute to Dane County</h1>
+    <div id="map"></div>
+    <div id='event'>
+        <!--<input type="button" value="setData" class="btn" onclick="setData()">-->
+        <br><br>
+        <input type="button" value="Hide" class="btn" onclick="hide()">
+        <br><br>
+        <input type="button" value="Show" class="btn" onclick="show()">
+        <br><br>
+        <input type="button" value="Pause" class="btn" onclick="pause()">
+        <br><br>
+        <input type="button" value="Play" class="btn" onclick="play()">
+        <!--<input type="button" value="destroy" class="btn" onclick="destroy()">-->
+    </div>
+        <p id="footer"><a href='../index.html'>Return to Home Page</a></p>
+        <div id="description">
+    </div>
+    <script src="map_lab9.js"></script>
+    
