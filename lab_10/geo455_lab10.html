@@ -27,40 +27,34 @@
     
 // Bounds   long/lat
 var bounds = [46.0953463, 20.1750790, 13.1870289, 68.3020382];
-    
-// Initialize map
+          
+// create map
 var mymap = L.map("map").fitBounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]]);
-        
 L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", 
     {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}
 ).addTo(mymap);
 
-// Define layers
+// Set layers
 var pnt_layer = L.layerGroup().addTo(mymap);
-var tin_layer = L.layerGroup().addTo(mymap);
+var gc_layer = L.geoJSON().addTo(mymap);
 
-// Calculate random points
-var points = turf.randomPoint(5, {bbox: bounds});
-        
-L.geoJSON(points, {
-    onEachFeature: function(feature, layer) {
-        layer.addEventListener("drag", drawTIN);
-    },
-    pointToLayer: function(geoJsonPoint, latlng) {
-        return L.marker(latlng, {draggable: true});
-    }
-}).addTo(pnt_layer);
+// Draw points
+var point1 = L.marker([37.0048, 51.5037], {draggable: true}).on("drag", drawGC).addTo(pnt_layer);
+var point2 = L.marker([18.3942, 60.7369], {draggable: true}).on("drag", drawGC).addTo(pnt_layer);
+       
 
-// Function to draw TIN
-function drawTIN() {
-    tin_layer.clearLayers();
+// Function to draw Great Circle line
+function drawGC() {
+    gc_layer.clearLayers();
     points = pnt_layer.toGeoJSON();
-    tin = turf.tin(points);
-    tin = L.geoJSON(tin);
-    tin.addTo(tin_layer);
+    var gc = turf.greatCircle(points.features[0], points.features[1]);
+    L.geoJSON(gc).addTo(gc_layer);
 }
-drawTIN();
+drawGC();
+        
+        //Add midpoint
+  var midpoint = turf.midpoint(point1, point2).addTo(mymap);   
 
     </script>
 </body>
