@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Final - Charlie Faude</title>
+    <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/"></script>
+        
+        <!-- Load jQuery from CDN -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+       
+       <!-- Load Leaflet from CDN -->
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    
+       <script src="http://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+       
+       <!-- Load Googple Fonts API -->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100&display=swap" rel="stylesheet">
+       
+       <!-- Load Esri Leaflet from CDN -->
+       <script src="https://unpkg.com/esri-leaflet@3.0.7/dist/esri-leaflet.js"
+        integrity="sha512-ciMHuVIB6ijbjTyEdmy1lfLtBwt0tEHZGhKVXDzW7v7hXOe+Fo3UA1zfydjCLZ0/vLacHkwSARXB5DmtNaoL/g=="
+        crossorigin=""></script>
+
+    <!-- Load Esri Leaflet Vector from CDN -->
+      <script src="https://unpkg.com/esri-leaflet-vector@3.1.2/dist/esri-leaflet-vector.js"
+            integrity="sha512-SnA/TobYvMdLwGPv48bsO+9ROk7kqKu/tI9TelKQsDe+KZL0TUUWml56TZIMGcpHcVctpaU6Mz4bvboUQDuU3w=="
+            crossorigin=""></script>
+    
+    
+       <!---Load my script --->
+       <script src="map_final.js"></script>
+    <script src="US_Major_Rivers.js"></script>
+     <script src="hydrilla_reported_points_Fea.js"></script> 
+
+    
+    <style>
+    html,body{
+        margin: 0;
+        padding: 0;
+        background-color: "whitesmoke";
+        font-family: "Tahoma", sans-serif;
+        color: black;
+    }
+        #title {
+                position: fixed;
+                margin-top: 0;
+                top: 10px;
+                left: 400px;
+                right: 400px;
+                text-align: center;
+                font-size: 2em;
+                font-family: "Tahoma", sans-serif;
+                letter-spacing: .04em;
+                padding: 10px 15px;
+                background-color: #89BF9E;
+                border: 4px solid black;
+                border-radius: 3px;
+                z-index: 800;
+            }
+    #map{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    #footer {
+            position: fixed;
+            margin-top: 0;
+            bottom: 7px;
+            left: 335px;
+            right: 1400px;
+            text-align: right;
+            font-size: 0.9em;
+            font-family: "Tahoma", sans-serif;
+            letter-spacing: 0em;
+            padding: 10px 15px;
+            background-color: #89BF9E;
+            border: 4px solid black;
+            border-radius: 3px;
+            z-index: 800;
+        }
+    #event{
+        position: fixed;
+        top: 80px;
+        bottom: 20px;
+        left: 10px;
+        width: 200px;
+        font-family: "Tahoma", sans-serif;
+        padding: 0px 15px;
+        background-color: #89BF9E;
+        border: 4px solid black;
+        border-radius: 3px;
+        z-index: 800;
+    }
+    #description {
+            position: fixed;
+        font-family: "Tahoma", sans-serif;
+        font-size: 0.9em;
+        padding: 0px 15px;
+            top: 10px;
+            bottom: 20px;
+            left: 10px;
+            width: 280px;
+            padding: 0px 15px;
+            background-color: #89BF9E;
+            border: 4px solid black;
+            border-radius: 3px;
+            z-index: 800;
+        }
+     #description p {
+            font-size: .9em;
+            line-height: 1.5em;
+        }
+        #description a {
+            color: #005daa;
+            text-decoration: none;
+        }
+        #description a:hover {
+            text-decoration: underline;
+        }
+         /* Popup container */
+    .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    /* The actual popup (appears on top) */
+    .popup .popuptext {
+      visibility: hidden;
+      width: 150px;
+      height: 120px;
+      background-color: #0B4D28;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #0B4D28 transparent transparent transparent;
+    }
+
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 0s;
+      animation: fadeIn 0s
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity:1 ;}
+    }
+             /* Popup container TWO */
+    .popup2 {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    /* The actual popup (appears on top) */
+    .popup2 .popuptext2 {
+      visibility: hidden;
+      width: 160px;
+      background-color: #0B4D28;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -80px;
+    }
+
+    /* Popup arrow */
+    .popup2 .popuptext2::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #0B4D28 transparent transparent transparent;
+    }
+
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    .popup2 .show2 {
+      visibility: visible;
+      -webkit-animation: fadeIn 0s;
+      animation: fadeIn 0s
+    }
+
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity:1 ;}
+    }
+    .button {
+           background-color: rgba(170, 209, 187); /* Green */
+           border: 1px solid white;
+           color: white;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-family: "Noto Sans";
+            font: sans-serif;
+           font-size: 16px;
+           border-radius: 6px;
+           display: block;
+           width: 200px;
+           height: 50px;
+       }
+    #splasher1{
+               background-color: white;
+              font-family: "Noto Sans";
+                font: sans-serif;
+               padding: 2px;
+               width: auto;
+               left: 20px;
+               margin-right: auto;
+               opacity: 1;
+               position: absolute;
+               top: 500px;
+           }
+           #splasher2{
+               background-color: white;
+               font-family: "Noto Sans";
+               font: sans-serif;
+               font-size: 0.8em;
+               padding: 2px;
+               width: 210px;
+               left: 20px;
+               margin-left: auto;
+               margin-right: auto;
+               opacity: 0.9;
+               position: absolute;
+               top: 350px;
+               display: block;
+           }
+        #container #leftmenu{
+                position: static;
+                width: 220px;
+                top: 10px;
+                left: 50px;
+                padding: 10px 15px;
+                float: left;
+                height: 780px;
+                margin: 0;
+                font-size: 1em;
+                font-family: "Noto Sans";
+                font: sans-serif;
+                letter-spacing: .04em;
+                background-color: #e1b0eb;
+                border: 1px solid grey;
+                border-radius: 3px;
+               
+           }
+        
+        .legend {
+                  padding: 6px 8px;
+                  line-height: 18px;
+                  background: rgba(255,255,255,0.9);
+                  font-family: "Noto Sans";
+                  font: sans-serif;
+                  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                  border-radius: 5px;
+        }
+       .legend i {
+                  width: 18px;
+                  height: 18px;
+                  float: left;
+                  font-family: "Noto Sans";
+                  font: sans-serif;
+                  margin-right: 8px;
+                  opacity: 0.7;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Final: Horizon Scanning with climatchR</h1>
+    <div id="map"></div>
+    <div id="description">
+        <h2>Discussion:</h2>
+        For my final project in Web Mapping, I decided to make an interactive map displaying what I learned through my internship. I used the <a href="https://www.usgs.gov/software/climatchr-implementation-climatch-r" target="_blank">climatchR package</a> from USGS to perform horizon scanning on invasive species. 
+        <h2>Information:</h2>
+        <div class="popup" onclick="myFunction()"><i>Hydrilla Verticillata</i>
+        <span class="popuptext" id="myPopup"><h8><a href="https://doi.org/10.1079/cabicompendium.2817" target="_blank">DOI</a></h8> <img src="hydrilla.png" align= "center" width="150" height="100"></span></div>
+        is an aquatic invasive species that can cause economic and ecologic damage if it establishes in a community. This is the example species I used.
+        <br><br>
+        Horizon Scanning is a technique used to examine invasion risk. An example of horizon scanning would be to see that it is difficult to grow dragon fruit in Wisconsin. <br><br>
+        I computed current and future climate matching scores for the states along the Mississippi River using the package. <b>The current and future scores are on a scale from 0-10, with 10 being the best climate match for the species.</b><br><br>
+        The <i>climatchR</i> workflow (from <a href="https://doi.org/10.1016/j.envsoft.2022.105510" target="_blank">DOI</a>) requires <a href="https://chelsa-climate.org/" target="_blank">climate</a> and <a href="https://www.gbif.org/species/5329570" target="_blank">species</a> data.
+        <br><br>
+        <img src="climatchR_workflow.jpg" align= "center" width="250" height="150">
+        <br><br>
+
+        Map authored by <b>Charlie Faude</b>.
+        
+        </div>
+        <p id="footer"><a href='../index.html'>Return to Home Page</a></p>
+    <script src="map_final.js"></script>
+<script>             // When the user clicks on <div>, open the popup
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+            function myFunction2() {
+      var popup2 = document.getElementById("myPopup2");
+      popup2.classList.toggle("show2");
+    }
+</script>
+    
