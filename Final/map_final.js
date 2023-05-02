@@ -125,6 +125,20 @@ hydrilla_reported_points_Fea.features.forEach(function(feature) {
 
 mymap.addLayer(clustermarkers);
 
+// CREATE SLIDER 
+
+
+
+var testlayer = L.geoJson(hydrilla_MRiver);
+var sliderControl = L.control.sliderControl({position: "bottomright", layer: testlayer});
+
+/*var markers = L.layerGroup(clustermarkers);*/
+
+mymap.addControl(sliderControl);
+sliderControl.startSlider();
+
+
+
 // Create menu items
 
 
@@ -140,7 +154,7 @@ var overlays = {
     'Current Climate Match Scores': currentScores,
     '2 Digit Hydrolic Unit Codes (HUC 2)': huc2,
     'Major US Rivers': rivers,
-    'Hydrilla Reported': clustermarkers,
+    'Clusters of Hydrilla Reported': clustermarkers,
     };
 
 

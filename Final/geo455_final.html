@@ -10,9 +10,9 @@
      <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/"></script>
         
         <!-- Load jQuery from CDN -->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+       <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+       <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+       <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
        
        <!-- Load Leaflet from CDN -->
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
@@ -43,9 +43,14 @@
        <!---Load my script --->
        <script src="map_final.js"></script>
     <script src="US_Major_Rivers.js"></script>
-    <script src="hydrilla_reported_points_Fea.js"></script> 
+    <script src="hydrilla_reported_points_Fea.js"></script>
+    <script src="hydrilla_MRiver.js"></script>
     <script src="https://raw.githubusercontent.com/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
-
+    
+    <!-- slider -->
+    <script src="leaflet.markercluster.layersupport.js"></script>
+    <script src="SliderControl.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
     
     <style>
     html,body{
@@ -354,4 +359,3 @@
       popup2.classList.toggle("show2");
     }
 </script>
-    
