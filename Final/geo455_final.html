@@ -35,11 +35,16 @@
             integrity="sha512-SnA/TobYvMdLwGPv48bsO+9ROk7kqKu/tI9TelKQsDe+KZL0TUUWml56TZIMGcpHcVctpaU6Mz4bvboUQDuU3w=="
             crossorigin=""></script>
     
+    <!-- Load Cluster Marker plugin from CDN -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    
     
        <!---Load my script --->
        <script src="map_final.js"></script>
     <script src="US_Major_Rivers.js"></script>
-     <script src="hydrilla_reported_points_Fea.js"></script> 
+    <script src="hydrilla_reported_points_Fea.js"></script> 
+    <script src="https://raw.githubusercontent.com/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
 
     
     <style>
@@ -312,6 +317,8 @@
         }
         
     </style>
+    
+     
 </head>
 
 <body>

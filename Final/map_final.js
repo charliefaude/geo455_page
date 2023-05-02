@@ -83,31 +83,6 @@ var rivers = L.esri.featureLayer({
             }
   });
 
-//Cluster Map
-
-/* var min = 0;
-var max = 0;    
-
-var heatMapPoints = [];
-
-hydrilla_reported_points_Fea.features.forEach(function(feature) {
-    heatMapPoints.push([feature.geometry.coordinates[1], feature.geometry.coordinates[0], feature.properties.number_of_]);
-    if(feature.properties.number_of_<min||min===0){
-        min=feature.properties.number_of_;
-    }
-    if(feature.properties.number_of_>max||max===0){
-        max=feature.properties.number_of_;
-    }
-    
-})
-
-var heat = L.heatLayer(heatMapPoints, {
-    radius: 25,
-    minOpacity: 0.5,
-    gradient:{0.5: 'blue', 0.75: 'lime', 1: 'red'},
-}).addTo(mymap); */
-
-
 
 
 //Create LEGEND for rasters (climatch scores)
@@ -142,12 +117,13 @@ legend.onAdd = function (mymap) {
 
 legend.addTo(mymap); 
 
-/* var clustermarkers = L.markerClusterGroup();
+//Cluster Map
+var clustermarkers = L.markerClusterGroup();
 hydrilla_reported_points_Fea.features.forEach(function(feature) {
     clustermarkers.addLayer(L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]]));
 })
 
-mymap.addLayer(clustermarkers); */
+mymap.addLayer(clustermarkers);
 
 // Create menu items
 
@@ -164,6 +140,7 @@ var overlays = {
     'Current Climate Match Scores': currentScores,
     '2 Digit Hydrolic Unit Codes (HUC 2)': huc2,
     'Major US Rivers': rivers,
+    'Hydrilla Reported': clustermarkers,
     };
 
 
@@ -171,4 +148,7 @@ var overlays = {
  
 
 var layerControl = L.control.layers(baseLayers, overlays, {collapsed: false}).addTo(mymap);
+
+
+
 
