@@ -52,6 +52,14 @@
     <script src="SliderControl.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
     
+     <!--    Easy Button    -->
+<!--        <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+
+        <!--    Bootstrap Buttons    -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <style>
     html,body{
         margin: 0;
@@ -320,6 +328,8 @@
                   margin-right: 8px;
                   opacity: 0.7;
         }
+        .cerf_logo:hover{
+                transform:scale(1.05);
         
     </style>
     
@@ -340,9 +350,11 @@
         Horizon Scanning is a technique used to examine invasion risk. An example of horizon scanning would be to see that it is difficult to grow dragon fruit in Wisconsin. <br><br>
         I computed current and future climate matching scores for the states along the Mississippi River using the package. <b>The current and future scores are on a scale from 0-10, with 10 being the best climate match for the species.</b><br><br>
         The <i>climatchR</i> workflow (from <a href="https://doi.org/10.1016/j.envsoft.2022.105510" target="_blank">DOI</a>) requires <a href="https://chelsa-climate.org/" target="_blank">climate</a> and <a href="https://www.gbif.org/species/5329570" target="_blank">species</a> data.
+        The <i>climatchR</i> workflow (from <a href="https://doi.org/10.1016/j.envsoft.2022.105510" target="_blank">DOI</a>) requires <a href="https://chelsa-climate.org/" target="_blank">climate</a> and <a href="https://www.gbif.org/species/5329570" target="_blank">species</a> data.
         <br><br>
-        <img src="climatchR_workflow.jpg" align= "center" width="250" height="150">
-        <br><br>
+        <a href="https://www.usgs.gov/software/climatchr-implementation-climatch-r" target="_blank">
+                <img src="climatchR_workflow.jpg" alt="climatchR Workflow" class="cerf_logo" style="width:100%">
+            </a>
 
         Map authored by <b>Charlie Faude</b>.
         

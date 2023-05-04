@@ -35,6 +35,15 @@ var Esri_WorldShadedRelief = L.tileLayer('https://server.arcgisonline.com/ArcGIS
 });
 
 
+// Re-Center Button
+            L.easyButton(('<img src="https://www.freeiconspng.com/thumbs/worldwide-web-icon/world-wide-web-globe-icon-images--pictures-becuo-0.png", height=85%>'), function(btn, map){
+                map.setView([38.85250119246977, -99.60815961021089], 5);
+            }).addTo(mymap);
+
+            mymap.on('click', function () {
+                sidebar.hide();
+            })
+
 // Create Future Scores layer (from Arc Online)
 var futureScores = L.esri.tiledMapLayer({
     url:'https://tiles.arcgis.com/tiles/uRm5PFNUDV7pDKUv/arcgis/rest/services/H_Verticillata_Future_Climatch_Scores/MapServer',
